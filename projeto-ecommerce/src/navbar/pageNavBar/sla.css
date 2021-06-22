@@ -1,0 +1,17 @@
+.container {
+    border: 0;
+    margin: 0;
+    padding-right: 0.5rem;
+    padding-right: 0.5rem;
+    align-content: center;
+    height: 30px;
+    background-color: black;
+    width: 100%;
+    position: -webkit-sticky;
+    border-color: black;
+}
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
