@@ -1,12 +1,11 @@
+import React from "react";
+
 function Home() {
-    return (
-        <div>
-        {/* <img src="https://i.redd.it/1c4zxargzfl41.jpg" alt=""/>
-        <img src="https://i.redd.it/1c4zxargzfl41.jpg" alt=""/>
-        <img src="https://i.redd.it/1c4zxargzfl41.jpg" alt=""/>
-        <img src="https://i.redd.it/1c4zxargzfl41.jpg" alt=""/> */}
-        </div>
-    )
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
 }
 
 export default Home;
