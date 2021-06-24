@@ -20,8 +20,7 @@ function Footer() {
             <Container>
               <ContainerLinks>
                 <Redes href="https://www.instagram.com">
-                  <AiOutlineInstagram />
-                  Tudo Dois
+                  <AiOutlineInstagram /> Tudo Dois
                 </Redes>
               </ContainerLinks>
               <ContainerLinks>
@@ -31,8 +30,7 @@ function Footer() {
               </ContainerLinks>
               <ContainerLinks>
                 <Redes href="https://www.linkedin.com/company/serratecoficial/">
-                  <ImLinkedin />
-                  Linkedin
+                  <ImLinkedin /> Linkedin
                 </Redes>
               </ContainerLinks>
             </Container>
