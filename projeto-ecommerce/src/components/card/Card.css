@@ -1,0 +1,53 @@
+.Card{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,
+    minmax(12rem,16rem));
+}
+
+.cartao {
+    overflow: hidden;
+    box-shadow:0 2px 10px;
+    border-radius: 20px;
+    display:flex; 
+    flex-direction:column;
+    margin: 20px;
+    justify-content:space-between;
+    cursor:pointer;
+    /*transition:transform 200ms ease-in;
+    transform:scale(1.02);*/
+}
+
+.img_cartao{
+    height: 12rem;
+    width: 100%;
+    object-fit:cover;
+}
+
+.titulo_cartao{
+    padding:1rem;
+}
+
+.descricao_cartao{
+    padding:0 1rem;
+}
+
+.botao_cartao{
+    padding:1rem;
+    font-family:inherit;
+    font-weight:bold;
+    font-size:1rem;
+    margin:1rem;
+    border:2px solid;
+    background: transparent;
+    color:lime;
+    border-radius: 20px;  
+    cursor: pointer;
+
+}
+.botao_cartao:hover {
+    background-color: grey;
+  }
+
+.cartao:hover{
+    transform:scale(1.02)
+}

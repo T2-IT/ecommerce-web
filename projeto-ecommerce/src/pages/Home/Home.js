@@ -44,3 +44,23 @@ function Home() {
 }
 
 export default Home;
+
+// Alteração Anna
+
+// import React from "react";
+// import './Home.css'
+// import Cartao from '../../components/card/Card'
+
+// function Home(){
+//   return( 
+//     <div>
+//       <a>
+//       <font size="10">Esse é uma fonte de tamanho 5</font>
+//       </a>
+//     <Cartao style="width: 100px;"/como mexer no CSS?/
+//     />
+//     </div>
+//   );
+// }
+
+// export default Home;
