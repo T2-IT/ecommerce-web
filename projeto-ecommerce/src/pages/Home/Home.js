@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Container, Hr, ImagemHome, ButtonProduto } from "./Styles";
+import { Link } from "react-router-dom";
+import api from "../../services/api";
 
 function Home() {
+  const [produtos, setProdutos] = useState([]);
+  useEffect(() => {
+    async function getProduto() {
+      const response = await api.get(`/produto`);
+
+      setProdutos(response.data);
+    }
+
+    getProduto();
+  }, []);
+
+  //  async function deleteProduct (id) {
+  //     await api.delete(`/produto/${id}`)
+  //     const productFilter = produtos.filter(x => x.id !== id)
+  //     setProdutos(productFilter)
+  //  }
+
   return (
     <div>
-      <h1>Home</h1>
+      <ImagemHome
+        src="https://images6.alphacoders.com/749/749388.jpg"
+        alt="fotoHome"
+      />
+      <Container>
+        <h1>Home</h1>
+      </Container>
+      <Hr />
+      <Container>
+        <p>Site focado na venda de itens esportivos e totalmente limitados.</p>
+      </Container>
+      <Container>
+        <Link to="/produtos">
+          <ButtonProduto>Ver produtos</ButtonProduto>
+        </Link>
+      </Container>
     </div>
   );
 }

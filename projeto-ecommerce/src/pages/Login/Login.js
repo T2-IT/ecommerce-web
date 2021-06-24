@@ -19,7 +19,9 @@ function Login() {
           <h1>Entrar</h1>
           <input type="text" placeholder="Email" value={email} onChange={ (e) => setEmail(e.target.value) }/>
           <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value) } />
+          <Link to="/home">
           <button type="submit">Acessar</button>
+          </Link>
         </form>
 
         <Link to="/register">Criar uma conta</Link>
