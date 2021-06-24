@@ -5,6 +5,7 @@ import Conta from "./pages/Conta/Conta";
 import GLobalStyle from "./styles/global"
 import Login from "./pages/Login/Login";
 import './App.css';
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route path="/conta" component={Conta}/>
       </Switch>
+      <Footer/>
       <GLobalStyle/>
     </BrowserRouter>
   );
