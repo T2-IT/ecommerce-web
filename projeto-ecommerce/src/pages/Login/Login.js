@@ -24,7 +24,7 @@ function Login() {
           </Link>
         </form>
 
-        <Link to="/register">Criar uma conta</Link>
+        <Link to="/cadastro">Criar uma conta</Link>
       </div>
     </div>
   );
