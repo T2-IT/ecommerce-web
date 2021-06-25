@@ -7,6 +7,8 @@
     margin: 20px;
     justify-content:space-between;
     cursor:pointer;
+    height: 40rem;
+    width: 20rem;
 }
 
 .img_cartao{
@@ -17,6 +19,7 @@
 
 .titulo_cartao{
     padding:1rem;
+    height: 4rem;
 }
 
 .descricao_cartao{

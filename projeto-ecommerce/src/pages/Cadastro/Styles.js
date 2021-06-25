@@ -1,17 +1,14 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
-  margin: 15px  ;
+  margin: 15px;
   height: 75px;
   border: 0;
   border-radius: 7px;
   font-size: 15px;
   background-color: #fff;
   padding: 2rem;
-  width:100% ;
-  
-  
-  
+  width: 100%;
 `;
 
 export const Form = styled.form`
@@ -29,7 +26,7 @@ export const Container = styled.div`
   background-color: #e1e1e1;
   flex-direction: column;
   padding: 5rem;
-  width:100%
+  width: 100%;
 `;
 
 export const Button = styled.button`
@@ -47,8 +44,6 @@ export const Button = styled.button`
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   border-radius: 0.25rem;
- 
-  
 
   &:hover {
     transition: 300ms;
@@ -65,13 +60,27 @@ export const ContainerInput = styled.div`
   padding: 10px;
   font-size: 15px;
   background-color: #fff;
-
 `;
 export const ContainerEspaco = styled.div`
-justify-content:center;
-width:60%
-
+  justify-content: center;
+  width: 60%;
 `;
 
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
 
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #a8a8b3;
+    transition: 0.2s;
 
+    &:hover {
+      color: #666;
+    }
+  }
+`;

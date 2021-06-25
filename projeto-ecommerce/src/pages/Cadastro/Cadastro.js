@@ -1,135 +1,80 @@
-import { useState } from "react";
-import { Input, Form, Container, Button , ContainerInput , ContainerEspaco} from "./Styles";
+import React, { useState } from "react";
+import {
+  Input,
+  Form,
+  Container,
+  Button,
+  ContainerInput,
+  ContainerEspaco,
+  Header,
+} from "./Styles";
+import api from "../../services/api";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Cadastro() {
-  const [nome, setNome] = useState("");
+  // async function handleSubmit() {
+  //   await api.post("/clientes", {
+  //     nomeCompleto: `${document.getElementById("nome").value}`,
+  //     senha: `${document.getElementById("senha").value}`,
+  //     usuario: `${document.getElementById("usuario").value}`,
+  //     cpf: `${document.getElementById("cpf").value}`,
+  //     email: `${document.getElementById("email").value}`,
+  //   });
+  // }
 
-  const [CPF, setCpf] = useState("");
-  const [date, setData] = useState("");
-  const [usuario, setUsuario] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
+  const [cliente, setCliente] = useState({
+    senha: "",
+    email: ""
+  });
 
-  const [CEP, setCEP] = useState("");
-  const [rua, setRua] = useState("");
-  const [numero, setNumero] = useState("");
-  const [complemento, setComplemento] = useState("");
-  const [referencia, setReferencia] = useState("");
-  const [bairro, setBairro] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [estado, setEstado] = useState("");
+  function handleSenha(event) {
+    const qualquerNome = { ...cliente };
+    qualquerNome.senha = event.target.value;
+    setCliente(qualquerNome);
+  }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleEmail(event) {
+    const qualquerNome = { ...cliente };
+    qualquerNome.email = event.target.value;
+    setCliente(qualquerNome);
+  }
+
+  async function handleSDHS(event) {
+    event.preventDefault();
+    console.log(cliente);
+    await api.post("/clientes", cliente);
   }
 
   return (
-    
     <Container>
+      <Header>
+        <Link to="/">
+          <IoArrowBackOutline size={30} />
+          <span>Voltar</span>
+        </Link>
+      </Header>
       <ContainerEspaco>
-      
-          <Form onSubmit={handleSubmit}>
-            <h1>Criar conta</h1>
-            <Input
-              type="text"
-              placeholder="Nome Completo"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
-
-            <Input
-              type="string"
-              placeholder="CPF"
-              value={CPF}
-              onChange={(e) => setCpf(e.target.value)}
-            />
-            <Input
-              type="date"
-              placeholder="Data de Nascimento"
-              value={date}
-              onChange={(e) => setData(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Usuário"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-              type="password"
-              placeholder="Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Input
-              type="password"
-              placeholder="Confirmar senha"
-              value={confirmpassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-
-            <Input
-              type="text"
-              placeholder="CEP"
-              value={CEP}
-              onChange={(e) => setCEP(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Rua"
-              value={rua}
-              onChange={(e) => setRua(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Número"
-              value={numero}
-              onChange={(e) => setNumero(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Complemento"
-              value={complemento}
-              onChange={(e) => setComplemento(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Ponto de referência"
-              value={referencia}
-              onChange={(e) => setReferencia(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Bairro"
-              value={bairro}
-              onChange={(e) => setBairro(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Cidade"
-              value={cidade}
-              onChange={(e) => setCidade(e.target.value)}
-            />
-            <Input
-              type="text"
-              placeholder="Estado"
-              value={estado}
-              onChange={(e) => setEstado(e.target.value)}
-            />
-           <Container>
-              <Button type="submit">Criar conta</Button>
-              </Container>
-          </Form>
-          </ContainerEspaco>
+        <Form onSubmit={(event) => handleSDHS(event)}>
+          <h1>Criar conta</h1>
+          <Input
+            type="text"
+            placeholder="Email"
+            id="email"
+            onChange={(event) => handleEmail(event)}
+          />
+          <Input
+            type="password"
+            placeholder="Senha"
+            id="senha"
+            onChange={(event) => handleSenha(event)}
+          />
+          <Container>
+            <Button type="submit">Criar conta</Button>
+          </Container>
+        </Form>
+      </ContainerEspaco>
     </Container>
-   
   );
 }
 

@@ -18,5 +18,6 @@ export const Hr = styled.hr`
 
 export const ContainerCard = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  grid-template-columns: 
+  repeat(auto-fit, minmax(18rem, 19rem));
 `;
