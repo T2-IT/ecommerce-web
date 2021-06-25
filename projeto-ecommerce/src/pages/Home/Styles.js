@@ -19,6 +19,7 @@ export const Hr = styled.hr`
 
 export const ImagemHome = styled.img`
   width: 100%;
+  justify-content: start;
   top: 0;
 `;
 
@@ -42,5 +43,21 @@ export const ButtonProduto = styled.button`
     transition: 300ms;
     background-color: rgb(71, 71, 71);
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  }
+`;
+
+export const P = styled.p`
+  font-size: 1.5rem;
+`;
+
+export const ImagemFundo = styled.img`
+  width: 621px;
+  height: 462px;
+  vertical-align: middle;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 10px;
+    transition: 300ms;
   }
 `;

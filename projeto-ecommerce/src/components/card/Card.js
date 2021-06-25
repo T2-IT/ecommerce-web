@@ -21,7 +21,7 @@ function Card() {
             <div>
               <img
                 src={repository.url}
-                class="img_cartao"
+                className="img_cartao"
               />
             </div>
             <div>
@@ -31,7 +31,7 @@ function Card() {
               <p className="descricao_cartao">{repository.descricao}</p>
             </div>
             <div>
-              <button onclick="myFunction()" className="botao_cartao">
+              <button className="botao_cartao">
                 Ver produto
               </button>
             </div>
