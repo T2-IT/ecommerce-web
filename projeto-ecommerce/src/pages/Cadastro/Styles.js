@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
-  margin-bottom: 15px;
+  margin: 15px  ;
   height: 75px;
   border: 0;
   border-radius: 7px;
   font-size: 15px;
   background-color: #fff;
   padding: 2rem;
+  width:100% ;
+  
+  
+  
 `;
 
 export const Form = styled.form`
@@ -25,6 +29,7 @@ export const Container = styled.div`
   background-color: #e1e1e1;
   flex-direction: column;
   padding: 5rem;
+  width:100%
 `;
 
 export const Button = styled.button`
@@ -42,6 +47,8 @@ export const Button = styled.button`
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   border-radius: 0.25rem;
+ 
+  
 
   &:hover {
     transition: 300ms;
@@ -58,4 +65,13 @@ export const ContainerInput = styled.div`
   padding: 10px;
   font-size: 15px;
   background-color: #fff;
+
 `;
+export const ContainerEspaco = styled.div`
+justify-content:center;
+width:60%
+
+`;
+
+
+

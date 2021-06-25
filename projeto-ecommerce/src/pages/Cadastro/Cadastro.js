@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Input, Form, Container, Button , ContainerInput} from "./Styles";
-import { Link } from "react-router-dom";
+import { Input, Form, Container, Button , ContainerInput , ContainerEspaco} from "./Styles";
 
 function Cadastro() {
   const [nome, setNome] = useState("");
@@ -26,8 +25,10 @@ function Cadastro() {
   }
 
   return (
+    
     <Container>
-      <div>
+      <ContainerEspaco>
+      
           <Form onSubmit={handleSubmit}>
             <h1>Criar conta</h1>
             <Input
@@ -122,12 +123,13 @@ function Cadastro() {
               value={estado}
               onChange={(e) => setEstado(e.target.value)}
             />
-            <Link to="/">
+           <Container>
               <Button type="submit">Criar conta</Button>
-            </Link>
+              </Container>
           </Form>
-      </div>
+          </ContainerEspaco>
     </Container>
+   
   );
 }
 
