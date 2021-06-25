@@ -1,52 +1,45 @@
-import React from "react";
-import './Card.css'
-
-function Cartao(props){
-  return(
-    <div>
-      <div className="cartao" >
-        <img src={props.img}
-        class="img_cartao" />
-        <h2 className="titulo_cartao">
-          {props.titulo}
-        </h2>
-        <p className="descricao_cartao">
-          {props.descricao}
-        </p>
-        <button onclick="myFunction()" className="botao_cartao">
-        Vai Pro Produto</button>
-      </div>
-      
-    </div>
-  );
-}
+import React, { useState, useEffect } from "react";
+import api from "../../services/api";
+import "./Card.css";
 
 function Card() {
-  return (
-    <div className="Card">
-        <Cartao 
-        titulo="Fluzão" /*conforme o texto aumenta, o card tbm, AJEITAR*/
-        img="https://cdn.awsli.com.br/600x450/954/954937/produto/43821322/068be6bec1.jpg"
-        descricao="sou do clube tantas vezes campeão"
-        />
-        <Cartao 
-        titulo="Tricolor"
-        img="https://cdn.awsli.com.br/600x450/954/954937/produto/43821322/068be6bec1.jpg"
-        conteudo="jdefkeefjekfebekfejfkfweiew
-        fefewifjfeuefjrgijrjgerhrjsz
-        vshvufjuvhisvbhvrigegstjsyr"
-        descricao="sou tricolor de coração"
-        />
-        <Cartao 
-        titulo="Flu"
-        img="https://cdn.awsli.com.br/600x450/954/954937/produto/43821322/068be6bec1.jpg"
-        descricao="Dom Fredom"
-        />
-    
+  const [produtos, setProdutos] = useState([]);
+  useEffect(() => {
+    async function getProduto() {
+      const response = await api.get(`/produto`);
+      setProdutos(response.data);
+    }
 
-    </div>
-  );
+    getProduto();
+  }, []);
+  console.log(produtos);
+  {
+    return produtos.map((repository) => {
+      return (
+        <div>
+          <div className="cartao">
+            <div>
+              <img
+                src={repository.url}
+                class="img_cartao"
+              />
+            </div>
+            <div>
+              <h2 className="titulo_cartao">{repository.nome}</h2>
+            </div>
+            <div>
+              <p className="descricao_cartao">{repository.descricao}</p>
+            </div>
+            <div>
+              <button onclick="myFunction()" className="botao_cartao">
+                Ver produto
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  }
 }
 
-//ReactDOM.render(<Card />, document.getElementById("root"));
 export default Card;

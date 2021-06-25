@@ -2,9 +2,8 @@ import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { ImLinkedin } from "react-icons/im";
-import "./footer.css";
 import logo from "../../Imagem/Logo-tudo2.png";
-import { Container, ContainerLinks, Redes, FooterDiv } from "./Styles";
+import { Container, ContainerLinks, Redes, FooterDiv , Hr} from "./Styles";
 
 function Footer() {
   return (
@@ -15,7 +14,7 @@ function Footer() {
             <Container>
               <img src={logo} alt="Tudo2" />
             </Container>
-            <hr />
+            <Hr/>
 
             <Container>
               <ContainerLinks>

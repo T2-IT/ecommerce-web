@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
-//import logo from '../../assets/logoT2.svg';
 
 function Login() {
   const [email, setEmail] = useState('');
